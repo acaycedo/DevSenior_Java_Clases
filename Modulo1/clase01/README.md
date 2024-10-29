@@ -12,10 +12,10 @@ Ejercicio 1:
 Ejercicio 2:
  - Imprime una cara usando los formatos print
 
-### [Diamante](/Modulo1/clase01/src/ImprimirDiamante.java)
+### 💎 [Diamante](/Modulo1/clase01/src/ImprimirDiamante.java)
 Ejercicio 3:
  - Imprime un diamante usando los formatos print
 
-### [PalabrasUsuario](/Modulo1/clase01/src/ImprimirPalabrasUsuario.java)
+### 👤 [PalabrasUsuario](/Modulo1/clase01/src/ImprimirPalabrasUsuario.java)
 Ejercicio 4:
  - Recoge la respuesta del usuario y la imprime
