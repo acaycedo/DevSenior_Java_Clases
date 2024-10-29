@@ -4,11 +4,7 @@ Este repositorio tiene los ejercicios propuestos en JavaLover nunca python
 
 ## 📂 Folder Structure 
 
-<<<<<<< HEAD
 ### 😐 [SaludoPersonal](/Modulo1/clase01/src/SaludoPersonal.java)
-=======
-### 😐 [SaludoPersonal](SaludoPersonal.java)
->>>>>>> a74845074b6e127f8f1142baaba8a757d0575f15
 Ejercicio 1:
  - Saluda :D
 
