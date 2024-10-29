@@ -4,7 +4,7 @@ Este repositorio tiene los ejercicios propuestos en JavaLover nunca python
 
 ## 📂 Folder Structure 
 
-### 😐 [SaludoPersonal](srv/SaludoPersonal.java)
+### 😐 [SaludoPersonal](SaludoPersonal.java)
 Ejercicio 1:
  - Saluda :D
 
