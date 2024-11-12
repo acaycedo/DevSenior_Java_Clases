@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Ejercicio5();
+        Ejercicio7();
     }
 
     // Ejercicio 1
@@ -54,53 +54,108 @@ public class App {
     // impar.
     public static void Ejercicio3() {
         var lector = new Scanner(System.in);
-            System.out.println("Digite el numero a evaluar: ");
-            var digito = lector.nextDouble();
-            var comparador = digito % 2;
-            if (comparador == 0) {
-                System.out.printf("El numero es Par: %.2f", digito);
-            } else {
-                System.out.printf("El numero es Impar: %.2f", digito);
-            }
-            lector.close();
-    }
-    // Ejercicio 4
-    // Escriba un programa que permita ingresar una letra e identifique si la letra es mayúscula o minúscula.
-    public static void Ejercicio4() {
-        var lector = new Scanner(System.in);
-            System.out.println("Digite el caracter a evaluar: ");
-            char caracter = lector.next().charAt(0);
-            if (Character.isUpperCase(caracter)) {
-                System.out.printf("Caracter ingresado esta mayusculas: %s", caracter);
-            } else if (Character.isLowerCase(caracter)){
-                System.out.printf("Caracter ingresado esta en minusculas: %s", caracter);
-            }else{
-                System.out.println("Caracter no valido.");
-            }
-            lector.close();
+        System.out.println("Digite el numero a evaluar: ");
+        var digito = lector.nextDouble();
+        var comparador = digito % 2;
+        if (comparador == 0) {
+            System.out.printf("El numero es Par: %.2f", digito);
+        } else {
+            System.out.printf("El numero es Impar: %.2f", digito);
+        }
+        lector.close();
     }
 
-    //Ejercicio 5
-    //Escriba un programa que permita ingresar una letra e identifique si es vocal o consonante.
+    // Ejercicio 4
+    // Escriba un programa que permita ingresar una letra e identifique si la letra
+    // es mayúscula o minúscula.
+    public static void Ejercicio4() {
+        var lector = new Scanner(System.in);
+        System.out.println("Digite el caracter a evaluar: ");
+        char caracter = lector.next().charAt(0);
+        if (Character.isUpperCase(caracter)) {
+            System.out.printf("Caracter ingresado esta mayusculas: %s", caracter);
+        } else if (Character.isLowerCase(caracter)) {
+            System.out.printf("Caracter ingresado esta en minusculas: %s", caracter);
+        } else {
+            System.out.println("Caracter no valido.");
+        }
+        lector.close();
+    }
+
+    // Ejercicio 5
+    // Escriba un programa que permita ingresar una letra e identifique si es vocal
+    // o consonante.
 
     public static void Ejercicio5() {
         var lector = new Scanner(System.in);
-            System.out.println("Digite el caracter a evaluar: ");
-            char caracter = lector.next().toLowerCase().charAt(0);
-            
-            if (caracter >= 'a' && caracter <= 'z') {
-                if (caracter == 'a' && caracter == 'e' && caracter == 'i'&& caracter == 'o'&& caracter == 'u') {
-                    System.out.printf("La letra ingresada es vocal: %s.",caracter);
-                }else{
-                    System.out.printf("La letra ingresada es consonante: %s.",caracter);
-                }
-                
-            }else{
-                System.out.printf("Caracter ingresado no es una letra.");
+        System.out.println("Digite el caracter a evaluar: ");
+        char caracter = lector.next().toLowerCase().charAt(0);
+
+        if (caracter >= 'a' && caracter <= 'z') {
+            if (caracter == 'a' && caracter == 'e' && caracter == 'i' && caracter == 'o' && caracter == 'u') {
+                System.out.printf("La letra ingresada es vocal: %s.", caracter);
+            } else {
+                System.out.printf("La letra ingresada es consonante: %s.", caracter);
             }
 
-            lector.close();
-    }
-    
+        } else {
+            System.out.printf("Caracter ingresado no es una letra.");
+        }
 
-}   
+        lector.close();
+    }
+    // Ejercicio 6
+    // Escriba un programa que permita ingresar un número y determine si es
+    // divisible por dos y siete.
+
+    public static void Ejercicio6() {
+        var lector = new Scanner(System.in);
+        System.out.println("Digite un numero para evaluar si es divisible por 2 y 7: ");
+        var numero = lector.nextInt();
+
+        if (numero % 2 == 0 && numero % 7 == 0) {
+            System.out.println("El numero es divisible por 2 y 7: " + numero);
+        } else if (numero % 2 == 0 && numero % 7 != 0) {
+            System.out.println("El numero es divisible por 2 pero no de 7: " + numero);
+        } else if (numero % 2 != 0 && numero % 7 == 0) {
+            System.out.println("El numero es divisible por 7 pero no de 2: " + numero);
+        } else {
+            System.out.println("El numero no es divisible por 2 y 7");
+        }
+
+        lector.close();
+    }
+
+    // Ejercicio 7
+    // Escriba un programa que permita ingresar tres números (representan la
+    // longitud de una línea) y compruebe si con estos números se puede formar un
+    // triángulo.
+
+    private static void Ejercicio7() {
+        
+        // Crear un objeto Scanner para leer datos de entrada
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario que ingrese tres números
+        System.out.print("Ingrese el primer lado del triángulo: ");
+        double lado1 = scanner.nextDouble();
+
+        System.out.print("Ingrese el segundo lado del triángulo: ");
+        double lado2 = scanner.nextDouble();
+
+        System.out.print("Ingrese el tercer lado del triángulo: ");
+        double lado3 = scanner.nextDouble();
+
+        // Verificar si se puede formar un triángulo
+        if (lado1 + lado2 > lado3 && lado1 + lado3 > lado2 && lado2 + lado3 > lado1) {
+            System.out.println("Los números ingresados pueden formar un triángulo.");
+        } else {
+            System.out.println("Los números ingresados NO pueden formar un triángulo.");
+        }
+
+        // Cerrar el scanner
+        scanner.close();
+    }
+}
+
+
