@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Ejercicio7();
+        Ejercicio10();
     }
 
     // Ejercicio 1
@@ -132,7 +132,7 @@ public class App {
     // triángulo.
 
     private static void Ejercicio7() {
-        
+
         // Crear un objeto Scanner para leer datos de entrada
         Scanner scanner = new Scanner(System.in);
 
@@ -156,6 +156,91 @@ public class App {
         // Cerrar el scanner
         scanner.close();
     }
+
+    private static void Ejercicio8() {
+        // Escriba un programa que permita ingresar un número (va a representar la
+        // cantidad de años) y de como respuesta la etapa en la que se encuentra la
+        // persona de acuerdo con la siguiente tabla.
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese su edad: ");
+        int age = scanner.nextInt();
+
+        if (age >= 0 && age <= 5) {
+            System.out.println("Primera Infancia");
+
+        } else if (age >= 6 && age <= 11) {
+            System.out.println("Infancia");
+
+        } else if (age >= 12 && age <= 18) {
+            System.out.println("Adolescencia");
+
+        } else if (age >= 19 && age <= 26) {
+            System.out.println("Juventud");
+
+        } else if (age >= 27 && age <= 59) {
+            System.out.println("Adultez");
+
+        } else if (age > 59) {
+            System.out.println("Persona Mayor");
+        } else {
+            System.out.println("Edad invalida");
+        }
+        scanner.close();
+
+    }
+
+    private static void Ejercicio9() {
+        // Un vendedor al por mayor de camisas ofrece diferentes precios de acuerdo a la
+        // cantidad de unidades que le compren. La siguiente tabla muestra la
+        // información:
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese la cantidad de camisetas a comprar: ");
+        int und = scanner.nextInt();
+
+        if (und >= 1 && und < 50) {
+            System.out.println("Precio por unidad: $45.000");
+
+        } else if (und >= 50 && und < 100) {
+            System.out.println("Precio por unidad: $40.000");
+
+        } else if (und >= 100 && und < 150) {
+            System.out.println("Precio por unidad: $35.000");
+
+        } else if (und >= 150 && und <= 200) {
+            System.out.println("Precio por unidad: $25.000");
+
+        } else if (und > 200) {
+            System.out.println("Precio por unidad: $25.000");
+        } else {
+            System.out.println("Precio no disponible");
+        }
+        scanner.close();
+    }
+
+    private static void Ejercicio10() {
+        //Escriba una función en la que ingrese un número entero entre 1 y 12. Este número corresponde con un mes (1 enero, 2 febrero, ..., 12 diciembre). El resultado debe ser el número de días del mes ingresado.
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el mes para saber los dias: ");
+        int month = scanner.nextInt();
+        String typeMonth = switch (month) {
+            case 1, 3, 5, 7, 8, 10, 12 -> {
+                System.out.print("Mes escogido "+ month);
+                yield "31";
+            }
+            case 4, 6, 9, 11 -> {
+                System.out.print("Mes escogido "+ month);
+                yield "30";
+            }
+            case 2 -> {
+                System.out.print("Mes escogido "+ month);
+                yield "28";
+            }
+            default -> "Mes no válido";
+        };
+        System.out.println(" y tiene: " + typeMonth+" dias.");
+        scanner.close();
+    }
+    
 }
-
-
