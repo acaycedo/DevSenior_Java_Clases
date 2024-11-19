@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Ejercicio10();
+        Ejercicio11();
     }
 
     // Ejercicio 1
@@ -36,15 +36,11 @@ public class App {
         System.out.println("Digite el tercer numero: ");
         var digito3 = lector.nextDouble();
         lector.close();
-        if (digito1 == digito3 || digito1 == digito2) {
-            // primero Math.max como solo toma dos argumentos primero tomamos los dos
-            // numeros y luego lo evaluamos nuevamente con el digito faltante
-        }
         if (digito2 == digito3) {
             System.out.println("Alguno de los numeros ingresados son iguales, para evaluar ");
         } else {
             var numeroMaximo = Math.max(digito1, Math.max(digito2, digito3));
-            System.err.println("Numero mas grande es: " + numeroMaximo);
+            System.out.println("Numero mas grande es: " + numeroMaximo);
         }
 
     }
@@ -220,27 +216,48 @@ public class App {
     }
 
     private static void Ejercicio10() {
-        //Escriba una función en la que ingrese un número entero entre 1 y 12. Este número corresponde con un mes (1 enero, 2 febrero, ..., 12 diciembre). El resultado debe ser el número de días del mes ingresado.
+        // Escriba una función en la que ingrese un número entero entre 1 y 12. Este
+        // número corresponde con un mes (1 enero, 2 febrero, ..., 12 diciembre). El
+        // resultado debe ser el número de días del mes ingresado.
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese el mes para saber los dias: ");
         int month = scanner.nextInt();
         String typeMonth = switch (month) {
             case 1, 3, 5, 7, 8, 10, 12 -> {
-                System.out.print("Mes escogido "+ month);
+                System.out.print("Mes escogido " + month);
                 yield "31";
             }
             case 4, 6, 9, 11 -> {
-                System.out.print("Mes escogido "+ month);
+                System.out.print("Mes escogido " + month);
                 yield "30";
             }
             case 2 -> {
-                System.out.print("Mes escogido "+ month);
+                System.out.print("Mes escogido " + month);
                 yield "28";
             }
             default -> "Mes no válido";
         };
-        System.out.println(" y tiene: " + typeMonth+" dias.");
+        System.out.println(" y tiene: " + typeMonth + " dias.");
         scanner.close();
     }
-    
+
+    private static void Ejercicio11() {
+        // Escriba una función en la que pueda ingresar tres números enteros y
+        // diferentes. Imprima estos valores en orden ascendente.
+        var lector = new Scanner(System.in);
+        System.out.println("Digite el primer numero: ");
+        var oneDigit = lector.nextInt();
+        System.out.println("Digite el segundo numero: ");
+        var twoDigit = lector.nextInt();
+        System.out.println("Digite el tercer numero: ");
+        var threeDigititos = lector.nextInt();
+        
+        int numeroMaximo1 = Math.max(oneDigit, Math.max(twoDigit, threeDigititos));
+        int numeroMaximo2 = Math.max(twoDigit,threeDigititos);
+        int numeroMinimo = Math.min(oneDigit, Math.min(twoDigit, threeDigititos));
+        System.out.println("el orden de los numeros es: "+numeroMaximo1+", "+numeroMaximo2+", "+numeroMinimo);
+
+        lector.close();
+    }
+
 }
